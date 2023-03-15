@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <windows.h>
+#include <mmsystem.h>
+
+using namespace std;
+
+int main()
+{
+    // 音乐文件路径
+    string path = "C:\\Users\\UserName\\Music\\music.mp3";
+
+    // 播放音乐
+    string command = "open \"" + path + "\" type mpegvideo alias music";
+    mciSendString(command.c_str(), NULL, 0, NULL);
+    mciSendString("play music", NULL, 0, NULL);
+
+    // 暂停5秒钟
+    Sleep(5000);
+
+    // 停止音乐
+    mciSendString("stop music", NULL, 0, NULL);
+    mciSendString("close music", NULL, 0, NULL);
+
+    return 0;
+}
