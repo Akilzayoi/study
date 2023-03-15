@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    string str, result;
+
+    // 获取用户输入的一组字符串
+    cout << "Enter a list of strings separated by spaces:\n";
+    getline(cin, str);
+
+    // 遍历输入的字符串，连接每个单词
+    for (int i = 0; i < str.length(); i++)
+    {
+        // 忽略空格
+        if (str[i] == ' ')
+            continue;
+        // 将每个单词连接到结果字符串
+        result += str[i];
+    }
+
+    // 打印连接后的字符串
+    cout << "The concatenated string is: " << result << endl;
+
+    return 0;
+}
